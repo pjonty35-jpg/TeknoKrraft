@@ -4,7 +4,6 @@ import { eventStart, faqs, overlaps, sessions, speakers, tracks } from "./data";
 import type { Session } from "./data";
 import { createCalendar } from "./calendar";
 import { useMotion } from "./useMotion";
-import { HeroScene } from "./HeroScene";
 
 type Modal =
   | { type: "track"; id: string }
@@ -592,7 +591,22 @@ export default function App() {
               onPointerMove={tilt}
               onPointerLeave={resetTilt}
             >
-              <HeroScene paused={motionPaused} fallback={<Sculpture />} />
+              <div className="render-scene geometric-hero">
+                <div className="orbital-scene" aria-hidden="true">
+                  <div className="orbit orbit-one" />
+                  <div className="orbit orbit-two" />
+                  {[0, 1, 2].map((i) => (
+                    <div className={`satellite satellite-${i}`} key={i}>
+                      <div className="cube">
+                        {Array.from({ length: 6 }, (_, face) => (
+                          <i key={face} />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Sculpture />
+              </div>
               <div className="art-caption">
                 CODE
                 <br />

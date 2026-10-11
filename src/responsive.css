@@ -1,4 +1,18 @@
 /* Loaded after visual effects so layout and touch targets retain priority. */
+.hero-art .geometric-hero > .sculpture {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  animation: sculpture-drift 8s ease-in-out infinite paused;
+}
+.hero-art.motion-active .geometric-hero > .sculpture {
+  animation-play-state: running;
+}
+.geometric-hero::after {
+  display: none;
+}
 .hero-copy,
 .programme-layout > *,
 .track-copy,
