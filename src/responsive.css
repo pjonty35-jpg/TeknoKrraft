@@ -1,0 +1,455 @@
+/* Loaded after visual effects so layout and touch targets retain priority. */
+.hero-copy,
+.programme-layout > *,
+.track-copy,
+.speaker,
+.speaker > div,
+.readiness,
+.venue,
+.faq-layout > *,
+.form-grid > *,
+.final-inner > * {
+  min-width: 0;
+}
+.hero-title-line {
+  white-space: normal;
+}
+.hero h1 em {
+  display: inline-block;
+}
+.sponsor-row {
+  flex-wrap: wrap;
+}
+.readiness-body {
+  flex-wrap: wrap;
+}
+.agenda-empty p,
+.contact-address {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+.render-canvas {
+  touch-action: pan-y;
+}
+.modal {
+  overscroll-behavior: contain;
+}
+@media (max-width: 1000px) {
+  .header-inner {
+    gap: 12px;
+  }
+  .header .button {
+    margin-left: auto;
+  }
+  .menu-toggle {
+    display: flex;
+    color: #bacddd;
+    border-color: #3c5667;
+    width: 44px;
+    height: 44px;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 12px 24px;
+    background: #101a21;
+    border-bottom: 1px solid #415561;
+    flex-direction: column;
+    gap: 0;
+    font-size: 15px;
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    box-shadow: 0 15px 35px #0005;
+  }
+  .nav.is-open {
+    display: flex;
+  }
+  .nav a {
+    padding: 14px 0;
+    min-height: 48px;
+    width: 100%;
+  }
+  .programme-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .table-head,
+  .session-row {
+    grid-template-columns: 58px minmax(0, 1fr) 98px;
+  }
+  .table-head span:nth-child(3),
+  .table-head span:nth-child(4),
+  .session-level,
+  .session-room {
+    display: none;
+  }
+  .session-name .mobile-session-meta {
+    display: block;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #a7bbc9;
+    margin-top: 5px;
+  }
+  .session-name h3 {
+    font-size: 14px;
+  }
+  .agenda-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .overview-grid article,
+  .overview-grid article:last-child {
+    padding: 24px;
+  }
+  .overview-grid p {
+    max-width: none;
+    font-size: 14px;
+  }
+  .overview-mark {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  .speaker-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .speaker {
+    flex-direction: row;
+    align-items: center;
+  }
+  .speaker-art {
+    width: 80px;
+  }
+  .final-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .final-actions {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 900px) {
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 10vw, 85px);
+    letter-spacing: -3px;
+  }
+  .hero h1 em {
+    letter-spacing: -3px;
+  }
+  .hero-art,
+  .hero-art:has(.render-scene) {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 1;
+  }
+  .render-scene {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  .hero-art .render-fallback .sculpture {
+    position: static;
+    height: auto;
+    width: 100%;
+  }
+  .countdown {
+    max-width: 465px;
+  }
+  .section-heading {
+    flex-wrap: wrap;
+    align-items: start;
+  }
+  .programme-heading .search {
+    width: 100%;
+  }
+  .readiness-venue {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .readiness-body {
+    flex-direction: row;
+  }
+  .venue {
+    min-height: 220px;
+  }
+  .faq-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .header-inner {
+    gap: 10px;
+  }
+  .header .button {
+    min-height: 44px;
+    padding: 11px 14px;
+  }
+  .brand {
+    font-size: 13px;
+  }
+  .hero h1 {
+    font-size: clamp(39px, 12.5vw, 72px);
+    letter-spacing: -2px;
+  }
+  .hero h1 em {
+    letter-spacing: -2px;
+  }
+  .hero-title-line {
+    white-space: nowrap;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .hero-location {
+    font-size: 14px;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-actions .button {
+    font-size: 12px;
+    padding: 12px 8px;
+    min-height: 48px;
+    text-align: center;
+  }
+  .hero-art {
+    max-width: 400px;
+  }
+  .countdown-grid {
+    gap: 8px;
+  }
+  .count-face span {
+    font-size: clamp(28px, 9vw, 42px);
+  }
+  .motion-control {
+    min-height: 44px;
+    padding-top: 4px;
+    font-size: 11px;
+  }
+  .hero-edge {
+    margin-inline: 16px;
+    gap: 12px;
+  }
+  .section {
+    padding-block: 40px;
+  }
+  .category-tabs {
+    flex-wrap: wrap;
+  }
+  .category-tabs button {
+    flex: 1 0 auto;
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .day-tabs button {
+    min-height: 48px;
+  }
+  .table-head,
+  .session-row {
+    grid-template-columns: 42px minmax(0, 1fr) 44px;
+    gap: 10px;
+    padding-inline: 12px;
+  }
+  .session-row {
+    padding-block: 14px;
+  }
+  .session-actions {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .save-button {
+    width: 44px;
+    height: 44px;
+  }
+  .details-link {
+    min-height: 36px;
+    font-size: 11px;
+  }
+  .session-name h3 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .session-name .mobile-session-meta {
+    font-size: 11px;
+  }
+  .session-time {
+    font-size: 12px;
+  }
+  .session-time small {
+    font-size: 10px;
+  }
+  .session-detail p,
+  .session-detail .prerequisites {
+    font-size: 13px;
+  }
+  .agenda-empty {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .agenda-empty small {
+    max-width: none;
+    font-size: 12px;
+  }
+  .agenda-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .agenda-item h4 {
+    font-size: 14px;
+  }
+  .agenda-item p {
+    font-size: 12px;
+  }
+  .track-card {
+    flex-direction: column;
+    padding: 22px;
+    align-items: stretch;
+  }
+  .track-art {
+    width: 150px;
+    height: 145px;
+    flex: 0 0 auto;
+    margin: 0 auto 10px;
+  }
+  .track-art .sculpture {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    transform: scale(1);
+  }
+  .track-copy h3 {
+    font-size: 23px;
+  }
+  .track-copy p {
+    font-size: 14px;
+  }
+  .track-copy .track-prerequisite {
+    font-size: 12px;
+  }
+  .level-tag {
+    font-size: 11px;
+  }
+  .track-actions .button,
+  .track-actions .text-link {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .checklist label {
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .checkbox-visual {
+    width: 22px;
+    height: 22px;
+  }
+  .readiness-body {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .readiness-progress {
+    width: 100%;
+    max-width: none;
+  }
+  .readiness-progress strong,
+  .readiness-progress > span {
+    font-size: 12px;
+  }
+  .speaker {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .speaker-art {
+    width: 100%;
+    max-width: none;
+    height: 110px;
+  }
+  .speaker h3 {
+    font-size: 14px;
+  }
+  .speaker p {
+    font-size: 12px;
+  }
+  .speaker .text-link {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .sponsor-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .sponsor-logo {
+    min-width: 0;
+    white-space: normal;
+  }
+  .sponsor-button {
+    grid-column: 1 / -1;
+  }
+  .faq-item button {
+    font-size: 14px;
+    min-height: 52px;
+  }
+  .faq-item p {
+    font-size: 14px;
+  }
+  .final-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .final-actions .button {
+    min-height: 48px;
+    font-size: 13px;
+  }
+  .footer-links button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .modal {
+    width: calc(100vw - 24px);
+    padding: 56px 20px 24px;
+    max-height: calc(100dvh - 24px);
+  }
+  .modal-close {
+    width: 44px;
+    height: 44px;
+  }
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea,
+  .search input {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .modal .button {
+    min-height: 48px;
+  }
+  .contact-address {
+    font-size: 18px;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .button,
+  .text-link,
+  .icon-button {
+    touch-action: manipulation;
+  }
+  .spatial {
+    transform: none;
+  }
+}
