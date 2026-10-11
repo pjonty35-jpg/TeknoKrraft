@@ -3,6 +3,7 @@ import type { FormEvent, PointerEvent, ReactNode } from "react";
 import { eventStart, faqs, overlaps, sessions, speakers, tracks } from "./data";
 import type { Session } from "./data";
 import { createCalendar } from "./calendar";
+import { useMotion } from "./useMotion";
 
 type Modal =
   | { type: "track"; id: string }
@@ -400,6 +401,8 @@ function toCalendar(selected: Session[]) {
 }
 
 export default function App() {
+  const [motionPaused, setMotionPaused] = useState(false);
+  useMotion(motionPaused);
   const [day, setDay] = useState(1),
     [category, setCategory] = useState("All"),
     [search, setSearch] = useState(""),
@@ -572,12 +575,35 @@ export default function App() {
                 </button>
               </div>
               <Countdown />
+              <button
+                className="motion-control"
+                aria-pressed={motionPaused}
+                onClick={() => setMotionPaused(!motionPaused)}
+              >
+                <span aria-hidden="true" />
+                {motionPaused
+                  ? "Resume ambient motion"
+                  : "Pause ambient motion"}
+              </button>
             </div>
             <div
               className="hero-art spatial"
               onPointerMove={tilt}
               onPointerLeave={resetTilt}
             >
+              <div className="orbital-scene" aria-hidden="true">
+                <div className="orbit orbit-one" />
+                <div className="orbit orbit-two" />
+                {[0, 1, 2].map((i) => (
+                  <div className={`satellite satellite-${i}`} key={i}>
+                    <div className="cube">
+                      {Array.from({ length: 6 }, (_, face) => (
+                        <i key={face} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Sculpture />
               <div className="art-caption">
                 CODE
