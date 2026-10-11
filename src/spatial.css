@@ -1,4 +1,114 @@
 /* Spatial objects are built from CSS planes, without a rendering dependency. */
+.render-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+.render-scene::before {
+  content: "";
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    #087fff22,
+    #0a85ff0a 48%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  z-index: -1;
+}
+.render-scene::after {
+  content: "";
+  position: absolute;
+  width: 54%;
+  height: 7%;
+  left: 23%;
+  bottom: 6%;
+  background: radial-gradient(ellipse, #0009, transparent 70%);
+  pointer-events: none;
+}
+.render-fallback {
+  position: absolute;
+  inset: 0;
+  transition: opacity 500ms ease;
+}
+.render-canvas {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+.render-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.is-rendered .render-canvas {
+  opacity: 1;
+}
+.is-rendered .render-fallback {
+  opacity: 0;
+  visibility: hidden;
+}
+.render-label {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  color: #7199b4;
+  font-family: "Space Grotesk", monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.render-label i {
+  width: 36px;
+  height: 1px;
+  background: #376681;
+}
+.hero-art:has(.render-scene) {
+  background-image:
+    linear-gradient(#3b83ae0a 1px, transparent 1px),
+    linear-gradient(90deg, #3b83ae0a 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.hero-art:has(.render-scene) .art-caption {
+  right: 4%;
+  bottom: 10%;
+  font-size: 8px;
+}
+.track-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    #fff9 45%,
+    transparent 65%
+  );
+  translate: -110% 0;
+  pointer-events: none;
+  transition: translate 750ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .track-card:hover::before {
+    translate: 110% 0;
+  }
+}
+@media (max-width: 600px) {
+  .hero-art:has(.render-scene) .art-caption {
+    display: none;
+  }
+  .render-label {
+    font-size: 7px;
+  }
+}
 .hero {
   isolation: isolate;
   background:
