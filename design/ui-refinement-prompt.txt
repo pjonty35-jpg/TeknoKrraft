@@ -1,0 +1,5 @@
+Refinement with the built-in image generation tool, using tekno-krraft-ui-v1.png as the edit target.
+
+Preserve the full composition, all sections, headline, artwork, countdown, rectangular controls, and spacing. Request 1536 by 3808 pixels or the maximum supported resolution, with sharper text and rules. Correct the expanded Serverless web apps prerequisites to Node.js and Git. Show the intended track levels: AI Intermediate, Web Beginner, Mobile Beginner, DevOps Advanced. Correct the saved Gemini workshop date to 16 Oct at 11:00. Retain the user's prohibited-design constraints.
+
+The saved v2 mockup remains a visual concept. Some generated text details still need correction in implementation. Its countdown is a static illustration; the frontend will compute and update the actual remaining time.
